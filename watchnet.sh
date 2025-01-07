@@ -1,5 +1,7 @@
 #!/bin/bash
 
+clear
+
 if [ $# -ne 1  ]; then
        echo -e "
        $(nmcli device status)
@@ -15,7 +17,10 @@ else
         device=$1
 fi
 
-
-echo "Real time monitoring for $device"
+clear
+echo "Real time monitoring for $device)"
+sleep 1
+echo "(Press CTRL + C to stop the program"
+sleep 2
 
 watch -n 0.1 "ip -s link show $device"
